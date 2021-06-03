@@ -1,0 +1,12 @@
+@mixin defaultAbs() {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@mixin flex($direction, $JC, $AI) {
+    display: flex;
+    justify-content: $JC;
+    align-items: $AI;
+    flex-direction: $direction;
+}

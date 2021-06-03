@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import './var', './mixin';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.btn { 
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #ddd;
+    &:hover {
+        color: #fff;
+    }
+}
+
+.search {
+    display: none;
+    padding: .4rem 2rem;
+    font-size: 1.1rem;
+    background: transparent;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    color: $basicCol;
+    box-shadow: 
+    0 5px 5px rgba(0,0,0,.3)
+    ;
+    transition: .5s ease;
+    opacity: 1;
+}
+
+.main-ctr {
+    position: relative;
+    min-height: 100vh;
+    max-height: 100vh;
+    font-family: 'Source Sans Pro', sans-serif;
+    overflow: hidden;
+    // background: $mainLinear;
+}
+
+// ------------------ MOBILE DESIGN ------------------
+
+.weather-ctr {
+    @include defaultAbs();
+    width: 100%;
+    height: 100%;
+    padding: 1.2rem;
+}
+
+.image-time {
+    @include defaultAbs();
+    width: 100%;
+    height: 100%;
+    z-index: -51;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.4) 20%, rgba(0,0,0,.5) 80%, rgba(0,0,0,1) 95%, rgba(0, 0, 0, 1) 100%);
+    }
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.w-header {
+    @include flex(row, space-between, center);
+    position: relative;
+    width: 100%;
+    margin-bottom: 3rem;
+    .search-ctr {
+        position:relative;
+    }
+    .search-city {
+        position: absolute;
+        top: 105%;
+        left: 0;
+        width: 100%;
+        background: rgba(255,255,255,1);
+        border-radius: 10px;
+        padding: 1rem 0;
+        box-shadow: 
+        0 3px 5px rgba(0,0,0,.2)
+        ;
+        display: none;
+    }
+    .city {
+        color: #111;
+        cursor: pointer;
+        padding: .5rem;
+        font-size: 1.1rem;
+        font-weight: bold;
+        &:hover {
+            background: rgba(0,0,0,.8);
+            color: white;
+        }
+    }
+    .err-loc {
+        @include flex(column, center, center);
+        font-size: 1.1rem;
+    }
+}
+
+.w-body {
+    @include flex(column, flex-start, center);
+
+    .loc {
+        font-size: 4rem;
+        color: white;
+        margin-bottom: .2rem;
+    }
+    .date {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: $unimportantCol;
+    }
+    .temp {
+        font-size: 6rem;
+        font-weight: bold;
+        color: white;
+        padding-bottom: 1rem;
+        border-bottom: 2px dashed white;
+        .deg {
+            font-weight: normal;
+        }
+        .type-deg {
+            font-size: 4rem;
+        }
+    }
+    .desc {
+        font-size: 1.6rem;
+        margin-top: 2rem;
+        color: #ddd;
+    }
+}
+
+.w-info {
+    @include flex(row, center, center);
+    margin-top: 4rem;
+    gap: 5rem;
+
+    .info-s {
+        @include flex(column, center, center);        
+    }
+
+    .icon {
+        font-size: 2rem;
+        color: $unimportantCol;
+    }
+
+    .val {
+        font-size: 1.2rem;
+        text-align: center;
+        color: #ddd;
+    }
+}
+
+.bg-UI {
+    transition: .5s ease;
+}
+
+.opacity {
+    transition: .5s ease;
+    opacity: .5;
+}

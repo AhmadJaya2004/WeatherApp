@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherApp</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./css/remixicon.css">
+    <script src="./source.js" type="module" defer></script>
+</head>
+
+<body>
+    <div class="main-ctr">
+        <div class="weather-ctr">
+            <div class="image-time">
+                <img src="./assets/night.jpg" alt="time" data-img-bgUI>
+            </div>
+            <div class="w-header">
+                <div class="menu-btn btn">
+                    <i class="ri-menu-2-line"></i>
+                </div>
+                <div class="search-ctr" data-ctr-search>
+                    <input data-city-search class="search" autofocus="true" type="text" placeholder="search location">
+                    <div class="search-city" data-city-box>
+                    </div>
+                </div>
+                <div class="search-btn btn" data-btn-loc>
+                    <i class="ri-map-pin-line"></i>
+                </div>
+            </div>
+            <div class="w-body">
+                <div class="loc" data-weather-title></div>
+                <div class="date" data-weather-date>23 May, 2020</div>
+                <div class="temp"><span data-weather-temp></span><span class="deg">&deg;</span><span
+                        class="type-deg">C</span>
+                </div>
+                <div class="desc" data-weather-summary></div>
+            </div>
+            <div class="w-info">
+                <div class="info-s info-wind">
+                    <div class="icon"><i class="ri-windy-line"></i></div>
+                    <div class="val"><span data-weather-wind>0</span><span>km/h</span></div>
+                </div>
+                <div class="info-s info-humidity">
+                    <div class="icon"><i class="ri-contrast-drop-line"></i></div>
+                    <div class="val"><span data-weather-humidity>0</span><span>%</span></div>
+                </div>
+                <div class="info-s info-weather">
+                    <div class="icon" data-icon-weather><i class="ri-cloudy-line"></i></div>
+                    <div class="val" data-weather-weather></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
